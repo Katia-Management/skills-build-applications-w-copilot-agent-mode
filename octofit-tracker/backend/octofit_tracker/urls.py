@@ -21,6 +21,12 @@ from rest_framework.response import Response
 from fitness import views
 import os
 
+codespace_name = os.environ.get('CODESPACE_NAME')
+if codespace_name:
+    base_url = f"https://{codespace_name}-8000.app.github.dev"
+else:
+    base_url = "http://localhost:8000"
+
 # Create router for ViewSets
 router = DefaultRouter()
 router.register(r'students', views.StudentViewSet)
@@ -35,12 +41,7 @@ router.register(r'performance-metrics', views.PerformanceMetricViewSet)
 @api_view(['GET'])
 def api_root(request):
     """API root endpoint with links to all endpoints"""
-    codespace_name = os.environ.get('CODESPACE_NAME')
-    if codespace_name:
-        base_url = f"https://{codespace_name}-8000.app.github.dev"
-    else:
-        base_url = "http://localhost:8000"
-    
+
     return Response({
         'message': 'Welcome to OctoFit Tracker API',
         'endpoints': {
