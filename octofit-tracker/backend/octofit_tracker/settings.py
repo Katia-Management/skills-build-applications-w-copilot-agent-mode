@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djongo',
     'rest_framework',
     'corsheaders',
+    'octofit_tracker',
     'fitness',
 ]
 
