@@ -31,6 +31,21 @@ const Navigation = ({ isAuthenticated, userType, onLogout }) => {
                 <li className="nav-item">
                   <Link className="nav-link" to="/student-register">Student Register</Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/activities">Activities</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/leaderboard">Leaderboard</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/teams">Teams</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/users">Users</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/workouts">Workouts</Link>
+                </li>
               </>
             ) : userType === 'teacher' ? (
               <>
